@@ -1,8 +1,12 @@
-# Codex
+# Avicena
 
-> Transforme um PDF em um Códex.
+> O conhecimento que cura.
 
-SaaS de Q&A em PDF para estudantes de saúde — sobe qualquer livro, apostila ou atividade e converse com ele como um mestre curandeiro.
+SaaS de Q&A em PDF para estudantes de saúde — sobe qualquer livro, apostila ou atividade e consulta com o **Hipócrates** (assistente IA) como se fosse um preceptor experiente. Resposta com a página exata, sempre.
+
+Nome inspirado em **Avicena (Ibn Sina, 980-1037)** — médico persa autor do *Cânone da Medicina*, principal livro-texto médico do mundo por mais de 600 anos.
+
+> Nota: o nome interno do repositório (`codex`) e o projeto Vercel mantêm o codinome original por compatibilidade. O produto público chama-se **Avicena**.
 
 ## Nicho
 
@@ -11,8 +15,11 @@ Faculdades de saúde: Medicina, Enfermagem, Biomedicina, Fisioterapia, Farmácia
 ## Estrutura
 
 - `index.html` — Landing page (V1.0, HTML estático)
+- `assets/` — Imagens, fontes, ícones (incluindo logo pixel art)
 - `brand/` — Brand assets, paleta, preview do brandbook
-- `assets/` — Imagens, fontes, ícones
+- `product/` — PRD, fluxos, schema, roadmap
+- `growth/` — Plano de Instagram + funil
+- `finance/` — Unit economics + cenários
 
 ## Stack planejada (V1.0)
 
