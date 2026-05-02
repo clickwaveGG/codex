@@ -18,9 +18,9 @@
 <meta name="twitter:image" content="./assets/og-image.svg">
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-<link rel="alternate icon" href="./assets/favicon.svg">
-<link rel="apple-touch-icon" href="./assets/favicon.svg">
+<link rel="icon" type="image/png" href="./assets/codex-logo-pixel.png">
+<link rel="alternate icon" type="image/png" href="./assets/codex-logo-pixel.png">
+<link rel="apple-touch-icon" href="./assets/codex-logo-pixel.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,10 +118,13 @@ a { color: var(--primary); }
 }
 
 .nav-logo {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
   display: block;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .nav-name {
@@ -1207,13 +1210,7 @@ a { color: var(--primary); }
 <nav class="navbar">
   <div class="navbar-inner">
     <a class="nav-brand" href="/">
-      <svg class="nav-logo" viewBox="0 0 64 64" role="img" aria-label="Codex">
-        <g fill="none" stroke="#0B5A4A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 14 L16 50" />
-          <path d="M48 16 C 28 16, 18 26, 18 32 C 18 38, 28 48, 48 48" />
-        </g>
-        <circle cx="32" cy="32" r="3.2" fill="#C4982A" />
-      </svg>
+      <img class="nav-logo" src="./assets/codex-logo-pixel.png" alt="Codex" width="38" height="38">
       <span class="nav-name">Codex</span>
     </a>
 
