@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codex — Brand Preview v1.0</title>
+<link rel="icon" type="image/svg+xml" href="./logo/codex-favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-page:        #F7F9F8;
+  --bg-warm:        #F2F5F3;
+  --bg-elevated:    #FFFFFF;
+  --bg-dark:        #0F1A14;
+  --bg-dark-elev:   #1A2620;
+  --primary:        #0B7A65;
+  --primary-hover:  #096B58;
+  --primary-light:  #E6F5F0;
+  --primary-muted:  #B8DDD2;
+  --primary-subtle: #D9EEE7;
+  --primary-deep:   #0B5A4A;
+  --accent:         #C4982A;
+  --accent-light:   #FBF5E6;
+  --accent-hover:   #A8821F;
+  --text:           #0F1A14;
+  --text-secondary: #5A6B62;
+  --text-tertiary:  #8A9B92;
+  --text-on-dark:   #F4F1EA;
+  --vital-red:      #D4373F;
+  --vital-red-bg:   #FCEBEC;
+  --border:         #DDE5E1;
+  --border-light:   #EBF0ED;
+  --surface-hover:  #F0F5F2;
+  --font-display:   'Playfair Display', Georgia, serif;
+  --font-body:      'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:      'JetBrains Mono', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-page);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 32px;
+}
+
+/* === Header === */
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-header img { height: 56px; }
+
+.brand-header .meta {
+  text-align: right;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.brand-header .meta strong { color: var(--text-secondary); }
+
+/* === Sections === */
+.section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.section-title .num {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 22px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.section-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+
+/* === Identity card === */
+.identity-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.identity-card .essence {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--primary);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.identity-card dt {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.identity-card dt:first-child { margin-top: 0; }
+
+.identity-card dd { font-size: 15px; color: var(--text-secondary); }
+
+@media (max-width: 720px) {
+  .identity-card { grid-template-columns: 1fr; }
+}
+
+/* === Logo grid === */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.logo-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo-card.dark {
+  background: var(--bg-dark);
+  border-color: var(--bg-dark-elev);
+}
+
+.logo-card.dark .label,
+.logo-card.dark .filename { color: var(--text-on-dark); opacity: 0.7; }
+
+.logo-card img { max-width: 200px; max-height: 80px; }
+
+.logo-card.symbol img { max-width: 96px; max-height: 96px; }
+
+.logo-card .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo-card .filename {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+/* === Palette grid === */
+.palette-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.palette-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.palette-row .group-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-top: 8px;
+}
+
+.palette-row .group-label small {
+  display: block;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.swatch {
+  border-radius: 10px;
+  padding: 16px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  border: 1px solid var(--border-light);
+}
+
+.swatch .name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.swatch .hex { font-weight: 500; }
+
+@media (max-width: 720px) {
+  .palette-row { grid-template-columns: 1fr; }
+}
+
+/* === Typography === */
+.typo-block {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 16px;
+}
+
+.typo-block .meta {
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.typo-block .meta strong { color: var(--text-secondary); font-weight: 500; }
+
+.typo-display { font-family: var(--font-display); font-weight: 700; font-size: 56px; letter-spacing: -1.5px; line-height: 1.1; }
+.typo-display.italic { font-style: italic; font-weight: 500; }
+.typo-h2 { font-family: var(--font-display); font-weight: 600; font-size: 32px; letter-spacing: -0.5px; }
+.typo-body { font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: 1.6; color: var(--text-secondary); }
+.typo-body.bold { font-weight: 600; color: var(--text); }
+.typo-mono { font-family: var(--font-mono); font-weight: 500; font-size: 16px; color: var(--accent); }
+.typo-eyebrow { font-family: var(--font-body); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-tertiary); }
+
+/* === Voice DO/DON'T === */
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.voice-card {
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.voice-card.do { border-left: 4px solid var(--primary); }
+.voice-card.dont { border-left: 4px solid var(--vital-red); }
+
+.voice-card .badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.voice-card.do .badge { background: var(--primary-light); color: var(--primary); }
+.voice-card.dont .badge { background: var(--vital-red-bg); color: var(--vital-red); }
+
+.voice-card .quote {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.voice-card .why {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 720px) { .voice-grid { grid-template-columns: 1fr; } }
+
+/* === Glossary table === */
+.glossary {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.glossary table { width: 100%; border-collapse: collapse; }
+.glossary th, .glossary td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+}
+
+.glossary th {
+  background: var(--bg-warm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.glossary tr:last-child td { border-bottom: none; }
+
+.glossary .codex-term {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* === Microcopy === */
+.microcopy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.microcopy-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.microcopy-card .cat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+
+.microcopy-card .text {
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* === Sample app === */
+.sample-app {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.sample-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border-light);
+  background: rgba(255,255,255,0.85);
+}
+
+.sample-nav .left { display: flex; align-items: center; gap: 12px; }
+.sample-nav img { height: 28px; }
+.sample-nav .name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.sample-nav .right .btn {
+  background: var(--primary);
+  color: var(--text-on-dark);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sample-body {
+  padding: 40px 32px 48px;
+  text-align: center;
+}
+
+.sample-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  border: 1px solid var(--primary-muted);
+}
+
+.sample-headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.sample-headline .accent { color: var(--primary); font-style: italic; }
+
+.sample-sub {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 28px;
+}
+
+.sample-cta {
+  background: var(--primary);
+  color: var(--text-on-dark);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.sample-cta-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Resposta IA sample */
+.ia-response {
+  margin: 32px auto 0;
+  max-width: 540px;
+  text-align: left;
+  background: var(--bg-warm);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.ia-response .who {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--accent-hover);
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.ia-response .body {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.ia-response .citation {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--accent-light);
+  color: var(--accent-hover);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.ia-response .disclaimer {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Footer */
+.brand-footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.brand-footer .mono { font-family: var(--font-mono); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="brand-header">
+    <img src="./logo/codex-logo-horizontal.svg" alt="Codex">
+    <div class="meta">
+      <strong>Brandbook Preview v1.0</strong><br>
+      Squad: brand-orqx (Meridian)<br>
+      Data: 2026-05-02
+    </div>
+  </header>
+
+  <!-- 1. Identity -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">01</span>Identidade</h2>
+    <p class="section-sub">A essência, a tese e o arquétipo que governam todas as decisões do Codex.</p>
+
+    <div class="identity-card">
+      <div>
+        <p class="essence">"O conhecimento que cura."</p>
+      </div>
+      <dl>
+        <dt>Nome final</dt>
+        <dd>Codex — /'kɔ.dɛks/, 2 sílabas, sem acento. Plural natural: códices.</dd>
+        <dt>Categoria</dt>
+        <dd>SaaS de Q&A em PDF para estudantes de saúde no Brasil.</dd>
+        <dt>Diferencial</dt>
+        <dd>Linguagem clínica em PT-BR + citação por página exata.</dd>
+        <dt>Arquétipo</dt>
+        <dd>Curador 60% + Sábio 40%. Cuida do estudante exausto, com rigor de fonte.</dd>
+        <dt>Posicionamento</dt>
+        <dd>O assistente de estudos que entende terminologia clínica e cita a página — diferente do NotebookLM que é genérico e em inglês.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 2. Logo -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">02</span>Logo</h2>
+    <p class="section-sub">Símbolo: códice aberto + marcador dourado. Funciona em 16px (favicon) sem perder leitura.</p>
+
+    <div class="logo-grid">
+      <div class="logo-card">
+        <img src="./logo/codex-logo-horizontal.svg" alt="Lockup horizontal">
+        <div>
+          <div class="label">Lockup horizontal</div>
+          <div class="filename">codex-logo-horizontal.svg</div>
+        </div>
+      </div>
+
+      <div class="logo-card">
+        <img src="./logo/codex-logo-vertical.svg" alt="Lockup vertical">
+        <div>
+          <div class="label">Lockup vertical</div>
+          <div class="filename">codex-logo-vertical.svg</div>
+        </div>
+      </div>
+
+      <div class="logo-card symbol">
+        <img src="./logo/codex-mark.svg" alt="Símbolo">
+        <div>
+          <div class="label">Símbolo</div>
+          <div class="filename">codex-mark.svg</div>
+        </div>
+      </div>
+
+      <div class="logo-card dark">
+        <img src="./logo/codex-logo-mono-white.svg" alt="Lockup branco">
+        <div>
+          <div class="label">Mono branco</div>
+          <div class="filename">codex-logo-mono-white.svg</div>
+        </div>
+      </div>
+
+      <div class="logo-card symbol">
+        <img src="./logo/codex-favicon.svg" alt="Favicon">
+        <div>
+          <div class="label">Favicon</div>
+          <div class="filename">codex-favicon.svg</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Paleta -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">03</span>Paleta — Codex Clinic</h2>
+    <p class="section-sub">Verde clínico + âmbar editorial + brancos quentes. Vermelho vital RARO. Tudo WCAG AA validado.</p>
+
+    <div class="palette-section">
+      <div class="palette-row">
+        <div class="group-label">Background<small>Fundos light + dark mode futuro</small></div>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#F7F9F8;color:#0F1A14;border-color:#DDE5E1;"><span class="name">bg-page</span><span class="hex">#F7F9F8</span></div>
+          <div class="swatch" style="background:#F2F5F3;color:#0F1A14;border-color:#DDE5E1;"><span class="name">bg-warm</span><span class="hex">#F2F5F3</span></div>
+          <div class="swatch" style="background:#FFFFFF;color:#0F1A14;border-color:#DDE5E1;"><span class="name">bg-elevated</span><span class="hex">#FFFFFF</span></div>
+          <div class="swatch" style="background:#0F1A14;color:#F4F1EA;"><span class="name">bg-dark</span><span class="hex">#0F1A14</span></div>
+          <div class="swatch" style="background:#1A2620;color:#F4F1EA;"><span class="name">bg-dark-elev</span><span class="hex">#1A2620</span></div>
+        </div>
+      </div>
+
+      <div class="palette-row">
+        <div class="group-label">Primary<small>Verde clínico — CTA, links, logo</small></div>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#0B7A65;color:#fff;"><span class="name">primary</span><span class="hex">#0B7A65</span></div>
+          <div class="swatch" style="background:#096B58;color:#fff;"><span class="name">primary-hover</span><span class="hex">#096B58</span></div>
+          <div class="swatch" style="background:#0B5A4A;color:#fff;"><span class="name">primary-deep</span><span class="hex">#0B5A4A</span></div>
+          <div class="swatch" style="background:#B8DDD2;color:#0F1A14;"><span class="name">primary-muted</span><span class="hex">#B8DDD2</span></div>
+          <div class="swatch" style="background:#D9EEE7;color:#0F1A14;"><span class="name">primary-subtle</span><span class="hex">#D9EEE7</span></div>
+          <div class="swatch" style="background:#E6F5F0;color:#0F1A14;"><span class="name">primary-light</span><span class="hex">#E6F5F0</span></div>
+        </div>
+      </div>
+
+      <div class="palette-row">
+        <div class="group-label">Accent<small>Âmbar editorial — destaques + marcador</small></div>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#C4982A;color:#fff;"><span class="name">accent</span><span class="hex">#C4982A</span></div>
+          <div class="swatch" style="background:#A8821F;color:#fff;"><span class="name">accent-hover</span><span class="hex">#A8821F</span></div>
+          <div class="swatch" style="background:#FBF5E6;color:#0F1A14;"><span class="name">accent-light</span><span class="hex">#FBF5E6</span></div>
+        </div>
+      </div>
+
+      <div class="palette-row">
+        <div class="group-label">Texto<small>Hierarquia em fundo claro + dark</small></div>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#0F1A14;color:#F4F1EA;"><span class="name">text</span><span class="hex">#0F1A14</span></div>
+          <div class="swatch" style="background:#5A6B62;color:#fff;"><span class="name">text-secondary</span><span class="hex">#5A6B62</span></div>
+          <div class="swatch" style="background:#8A9B92;color:#fff;"><span class="name">text-tertiary</span><span class="hex">#8A9B92</span></div>
+          <div class="swatch" style="background:#F4F1EA;color:#0F1A14;border-color:#DDE5E1;"><span class="name">text-on-dark</span><span class="hex">#F4F1EA</span></div>
+        </div>
+      </div>
+
+      <div class="palette-row">
+        <div class="group-label">Semantic<small>Vermelho vital — uso PONTUAL</small></div>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#D4373F;color:#fff;"><span class="name">vital-red</span><span class="hex">#D4373F</span></div>
+          <div class="swatch" style="background:#FCEBEC;color:#D4373F;border-color:#F58A8A;"><span class="name">vital-red-bg</span><span class="hex">#FCEBEC</span></div>
+        </div>
+      </div>
+
+      <div class="palette-row">
+        <div class="group-label">Border & surface<small>Estrutura sutil</small></div>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#DDE5E1;color:#0F1A14;"><span class="name">border</span><span class="hex">#DDE5E1</span></div>
+          <div class="swatch" style="background:#EBF0ED;color:#0F1A14;"><span class="name">border-light</span><span class="hex">#EBF0ED</span></div>
+          <div class="swatch" style="background:#F0F5F2;color:#0F1A14;border-color:#DDE5E1;"><span class="name">surface-hover</span><span class="hex">#F0F5F2</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Tipografia -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">04</span>Tipografia</h2>
+    <p class="section-sub">Playfair Display (display) + Inter (body) + JetBrains Mono (dados clínicos). Tudo Google Fonts.</p>
+
+    <div class="typo-block">
+      <div class="meta"><strong>Display:</strong> Playfair Display 700 · 56px · letter-spacing -1.5px · Google Fonts</div>
+      <div class="typo-display">O conhecimento que cura.</div>
+    </div>
+
+    <div class="typo-block">
+      <div class="meta"><strong>Display itálico:</strong> Playfair Display 500 italic · 32px</div>
+      <div class="typo-display italic">"Auscultando o compêndio…"</div>
+    </div>
+
+    <div class="typo-block">
+      <div class="meta"><strong>H2 sectional:</strong> Playfair 600 · 32px · letter-spacing -0.5px</div>
+      <div class="typo-h2">Por que o Codex é diferente?</div>
+    </div>
+
+    <div class="typo-block">
+      <div class="meta"><strong>Body:</strong> Inter 400 · 16px · line-height 1.6 · text-secondary</div>
+      <div class="typo-body">Sobe qualquer PDF — Guyton, Robbins, Netter, a apostila da faculdade — e consulta como se fosse um preceptor experiente. Casos clínicos, mecanismos, diferenciais. Sem ler 1500 páginas.</div>
+    </div>
+
+    <div class="typo-block">
+      <div class="meta"><strong>Body bold:</strong> Inter 600 · 16px · text</div>
+      <div class="typo-body bold">Cada resposta vem com a página exata de onde saiu.</div>
+    </div>
+
+    <div class="typo-block">
+      <div class="meta"><strong>Mono dado clínico:</strong> JetBrains Mono 500 · 16px · accent</div>
+      <div class="typo-mono">Robbins · p. 482 · "infarto agudo do miocárdio com supra de ST"</div>
+    </div>
+
+    <div class="typo-block">
+      <div class="meta"><strong>Eyebrow:</strong> Inter 500 · 12px · letter-spacing 3px · uppercase</div>
+      <div class="typo-eyebrow">Para estudantes de saúde · Material de estudo</div>
+    </div>
+  </section>
+
+  <!-- 5. Tom de voz -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">05</span>Tom de voz — DO / DON'T</h2>
+    <p class="section-sub">PT-BR coloquial com peso clínico. Direto, calmo, honesto sobre limites. Nada místico, nada corporatês.</p>
+
+    <div class="voice-grid">
+      <div class="voice-card do">
+        <span class="badge">✓ DO</span>
+        <p class="quote">"Sobe teu Guyton e pergunta o que quiser. O Hipócrates lê e responde com a página exata."</p>
+        <p class="why">Direto. Verbo no início. Coloquial conversacional.</p>
+      </div>
+      <div class="voice-card dont">
+        <span class="badge">✗ DON'T</span>
+        <p class="quote">"Potencialize sua jornada de aprendizado clínico com nossa solução de IA generativa."</p>
+        <p class="why">Corporatês traduzido. Vazio. Cringe.</p>
+      </div>
+
+      <div class="voice-card do">
+        <span class="badge">✓ DO</span>
+        <p class="quote">"Auscultando o compêndio…"</p>
+        <p class="why">Tema clínico sutil em loading. Glossário aplicado.</p>
+      </div>
+      <div class="voice-card dont">
+        <span class="badge">✗ DON'T</span>
+        <p class="quote">"Curando suas dúvidas com magia ancestral milenar 🧙‍♂️"</p>
+        <p class="why">Místico cringe. Esse tom é do Grimoire, não do Codex.</p>
+      </div>
+
+      <div class="voice-card do">
+        <span class="badge">✓ DO</span>
+        <p class="quote">"O parecer do Hipócrates aponta pra IAM com supra de ST. Confere a página 482 do Robbins."</p>
+        <p class="why">"Parecer" + "aponta" + cita página = pedagógico, compliance OK.</p>
+      </div>
+      <div class="voice-card dont">
+        <span class="badge">✗ DON'T</span>
+        <p class="quote">"A IA diagnosticou um caso de infarto agudo do miocárdio."</p>
+        <p class="why">Quebra compliance CFM. Nunca dizer que IA "diagnostica".</p>
+      </div>
+
+      <div class="voice-card do">
+        <span class="badge">✓ DO</span>
+        <p class="quote">"Material de estudo. Não substitui avaliação clínica."</p>
+        <p class="why">Disclaimer firme mas calmo. Não amedronta.</p>
+      </div>
+      <div class="voice-card dont">
+        <span class="badge">✗ DON'T</span>
+        <p class="quote">"⚠️ ATENÇÃO: ISSO NÃO É DIAGNÓSTICO MÉDICO. NÃO USE NO PACIENTE."</p>
+        <p class="why">Caps + emoji de alerta + tom de medo desnecessário.</p>
+      </div>
+
+      <div class="voice-card do">
+        <span class="badge">✓ DO</span>
+        <p class="quote">"Beleza, vamo lá: capítulo 14 do Porto fala sobre…"</p>
+        <p class="why">Coloquial brasileiro autêntico. Reconhece nicho (Porto = livro BR).</p>
+      </div>
+      <div class="voice-card dont">
+        <span class="badge">✗ DON'T</span>
+        <p class="quote">"Excelente questionamento! Conforme demonstrado no material fornecido…"</p>
+        <p class="why">ChatGPT-padrão americano traduzido. Sem alma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Glossário -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">06</span>Glossário proprietário</h2>
+    <p class="section-sub">LEI: usar sempre. Não inventar termos novos sem aprovação.</p>
+
+    <div class="glossary">
+      <table>
+        <thead>
+          <tr><th>Mundo real</th><th>Termo Codex</th><th>Onde usa</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PDF / documento</td><td class="codex-term">códice / compêndio</td><td>Marketing + UI</td></tr>
+          <tr><td>Conjunto de PDFs do usuário</td><td class="codex-term">estante / biblioteca clínica</td><td>UI dashboard</td></tr>
+          <tr><td>Pergunta do usuário</td><td class="codex-term">anamnese / consulta</td><td>Marketing + UI</td></tr>
+          <tr><td>Submeter pergunta</td><td class="codex-term">consultar / auscultar</td><td>Botões CTA</td></tr>
+          <tr><td>Resposta da IA</td><td class="codex-term">parecer / "Hipócrates diz"</td><td>UI conversa</td></tr>
+          <tr><td>Dashboard</td><td class="codex-term">consultório</td><td>UI navegação</td></tr>
+          <tr><td>Assinatura</td><td class="codex-term">juramento</td><td>Página de planos</td></tr>
+          <tr><td>Tier free</td><td class="codex-term">Estagiário</td><td>Pricing</td></tr>
+          <tr><td>Tier R$ 14,90</td><td class="codex-term">Residente</td><td>Pricing</td></tr>
+          <tr><td>Tier R$ 29,90</td><td class="codex-term">Clínico</td><td>Pricing</td></tr>
+          <tr><td>Tier R$ 297 lifetime</td><td class="codex-term">Preceptor</td><td>Pricing premium</td></tr>
+          <tr><td>Assistente IA</td><td class="codex-term">Hipócrates</td><td>UI + marketing</td></tr>
+          <tr><td>Loading</td><td class="codex-term">auscultando… / decifrando o tratado…</td><td>UI estados</td></tr>
+          <tr><td>Histórico</td><td class="codex-term">prontuário de consultas</td><td>UI navegação</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7. Aplicação sample -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">07</span>Aplicação — exemplo navegável</h2>
+    <p class="section-sub">Como tudo se compõe num pedaço real de produto. Hero + resposta da IA com citação.</p>
+
+    <div class="sample-app">
+      <div class="sample-nav">
+        <div class="left">
+          <img src="./logo/codex-logo-horizontal.svg" alt="Codex">
+        </div>
+        <div class="right">
+          <button class="btn">Começar grátis</button>
+        </div>
+      </div>
+
+      <div class="sample-body">
+        <span class="sample-badge">✓ Para estudantes de saúde</span>
+        <h1 class="sample-headline">Teu PDF de saúde vira um <span class="accent">assistente clínico</span>.</h1>
+        <p class="sample-sub">Sobe Guyton, Robbins, Netter, tua apostila — e consulta como se tivesse um preceptor de bolso.</p>
+        <button class="sample-cta">Subir códice</button>
+        <button class="sample-cta-ghost">Ver como funciona</button>
+
+        <!-- Resposta IA sample -->
+        <div class="ia-response">
+          <div class="who">Hipócrates diz —</div>
+          <div class="body">O caso aponta pra <strong>IAM com supra de ST em parede inferior</strong>. Conduta padrão: AAS, clopidogrel, anticoagulação e reperfusão imediata (angio primária se &lt; 90min, fibrinólise se sem cateterismo).</div>
+          <span class="citation">Robbins · p. 482</span>
+          <p class="disclaimer">Material de estudo. Não substitui avaliação clínica presencial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Microcopy -->
+  <section class="section">
+    <h2 class="section-title"><span class="num">08</span>Microcopy — biblioteca</h2>
+    <p class="section-sub">25 frases prontas para colar. Loading, empty states, CTAs, erros, sucesso.</p>
+
+    <div class="microcopy-grid">
+      <div class="microcopy-card"><div class="cat">loading</div><div class="text">Auscultando o compêndio…</div></div>
+      <div class="microcopy-card"><div class="cat">loading</div><div class="text">Decifrando o tratado…</div></div>
+      <div class="microcopy-card"><div class="cat">loading</div><div class="text">O Hipócrates tá lendo… só um instante.</div></div>
+      <div class="microcopy-card"><div class="cat">loading</div><div class="text">Indexando páginas — quase lá.</div></div>
+      <div class="microcopy-card"><div class="cat">loading</div><div class="text">Folheando o códice pra te responder…</div></div>
+
+      <div class="microcopy-card"><div class="cat">empty</div><div class="text">Tua estante tá vazia. Sobe teu primeiro códice pra começar.</div></div>
+      <div class="microcopy-card"><div class="cat">empty</div><div class="text">Nenhuma consulta por aqui ainda. Faz a primeira pergunta.</div></div>
+      <div class="microcopy-card"><div class="cat">empty</div><div class="text">Sem prontuário ainda. Tuas próximas consultas aparecem aqui.</div></div>
+      <div class="microcopy-card"><div class="cat">empty</div><div class="text">Esse códice ainda não foi consultado. Manda a primeira anamnese.</div></div>
+      <div class="microcopy-card"><div class="cat">empty</div><div class="text">Nenhum resultado. Tenta reformular ou trocar pra outro códice.</div></div>
+
+      <div class="microcopy-card"><div class="cat">cta</div><div class="text">Começar grátis</div></div>
+      <div class="microcopy-card"><div class="cat">cta</div><div class="text">Subir códice</div></div>
+      <div class="microcopy-card"><div class="cat">cta</div><div class="text">Consultar Hipócrates</div></div>
+      <div class="microcopy-card"><div class="cat">cta</div><div class="text">Virar Residente</div></div>
+      <div class="microcopy-card"><div class="cat">cta</div><div class="text">Selar o juramento</div></div>
+
+      <div class="microcopy-card"><div class="cat">erro</div><div class="text">Esse PDF tá pesado demais. Cap atual: 80MB.</div></div>
+      <div class="microcopy-card"><div class="cat">erro</div><div class="text">Não rolou subir esse arquivo. Confere se é PDF válido.</div></div>
+      <div class="microcopy-card"><div class="cat">erro</div><div class="text">Hipócrates ficou sem fôlego. Tenta de novo em alguns segundos.</div></div>
+      <div class="microcopy-card"><div class="cat">erro</div><div class="text">Tua quota diária acabou. Volta amanhã ou vira Residente.</div></div>
+      <div class="microcopy-card"><div class="cat">erro</div><div class="text">Foge do escopo do Codex. Aqui é estudo, não conduta clínica real.</div></div>
+
+      <div class="microcopy-card"><div class="cat">sucesso</div><div class="text">Códice indexado. Pode consultar.</div></div>
+      <div class="microcopy-card"><div class="cat">sucesso</div><div class="text">Consulta salva no prontuário.</div></div>
+      <div class="microcopy-card"><div class="cat">sucesso</div><div class="text">Bem-vindo, Residente. Teu juramento tá ativo.</div></div>
+      <div class="microcopy-card"><div class="cat">sucesso</div><div class="text">Página marcada. Tu acha em 'Anotações'.</div></div>
+      <div class="microcopy-card"><div class="cat">sucesso</div><div class="text">Pronto, anamnese enviada. Resposta tá vindo.</div></div>
+    </div>
+  </section>
+
+  <footer class="brand-footer">
+    <p>Codex — Brand Preview v1.0 · gerado por <span class="mono">brand-orqx (Meridian)</span> em 2026-05-02 para clickwaveGG.</p>
+    <p style="margin-top:6px;">Brandbook completo em <span class="mono">brand/BRANDBOOK.md</span> · Logos em <span class="mono">brand/logo/</span></p>
+  </footer>
+
+</div>
+
+</body>
+</html>

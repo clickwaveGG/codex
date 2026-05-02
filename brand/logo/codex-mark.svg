@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Codex symbol">
+  <!--
+    CODEX symbol — "Códice aberto"
+    Forma C que sugere um compêndio aberto visto de cima.
+    Marcador dourado central = página marcada / sigilo clínico.
+    Funciona em 16x16 (favicon) sem perder leitura.
+  -->
+  <title>Codex</title>
+  <!-- Background-safe: símbolo é monocromático verde profundo + 1 ponto âmbar -->
+  <g fill="none" stroke="#0B5A4A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Lombada do códice (linha vertical fina à esquerda) -->
+    <path d="M16 14 L16 50" />
+    <!-- Páginas formando o "C" -->
+    <path d="M48 16 C 28 16, 18 26, 18 32 C 18 38, 28 48, 48 48" />
+  </g>
+  <!-- Marcador / sigilo central -->
+  <circle cx="32" cy="32" r="3.2" fill="#C4982A" />
+</svg>
